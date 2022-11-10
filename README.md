@@ -1,1 +1,1 @@
-# duscrafter.com
+# duscrafter
