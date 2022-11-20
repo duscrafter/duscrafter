@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1em;
+  height: 100%;
+  background: lightblue url("background.png");
+  background-size: 1900px 950px;
+}
+
+h1 {
+  color: white;
+}
+h2 {
+  color: white;
+}
+h3 {
+  color: white;
+}
+h4 {
+  color: white;
+}
+h5 {
+  color: white;
+}
+p {
+  color: white;
+}
+img {
+  max-width: 450px;
+}
+
+.wrapper {
+  max-width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "main main main aside"
+    "footer footer footer footer";
+  grid-template-rows: 95px 1fr 200px;
+  grid-template-columns: repeat( 3, 1fr ) 240px;
+  grid-gap: 1em;
+}
+
+
+header {
+  grid-area: header;
+  background-color: #000000;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #e67a0d00;
+}
+
+footer {
+  grid-area: footer;
+}
+
+
+
+.header {
+
+}
+
+
+
+.logo {
+  display: block;
+  float: left;
+  height: 60px;
+  width: 50px;
+  background: url( 'logo.png' ) no-repeat center;
+  background-size: contain;
+  margin: 10px;
+  text-indent: -9999px;
+}
+
+
+/* Verberg de input-checkbox */
+[id=menu] {
+	display: none;
+}
+
+
+/* Geen margin en padding, geen list-item bullet
+ * Verberg het menu door max-height op '0' te zetten en overflow op 'hidden'
+ * Tevens zetten we een transitie op 'max-height', zodat ie straks mooi naar beneden opent
+ */
+nav ul {
+  position: absolute;
+  width: 100%;
+  top: 80px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
+  background: #000000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: block;
+  text-align: right;
+  border-bottom: 1px solid #fff;
+}
+
+nav ul li a {
+  display: block;
+  padding-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: rgba( 37, 68, 65, 0.3 );
+}
+
+/* Menu-toggle opmaken */
+nav .toggle {
+	display: block;
+	width: 80px;
+	height: 80px;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	float: right;
+	cursor: pointer;
+}
+
+nav .toggle:hover {
+  color: #FEEFDD;
+}
+
+/* Als de voorgaande checkbox (met id="menu") checked is,
+ * dan wordt de 'max-height' van de ul (ons menu) verhoogd naar heel hoog
+ * zodat hij zichtbaar wordt.
+ */
+[id=menu]:checked + ul {
+	max-height: 1000px;
+}
+
+
+
+main {
+  padding: 20px;
+}
+
+
+
+main .flex-wrapper {
+  display: flex;
+}
+
+main .flex-wrapper .img {
+  display: inline-block;
+  flex-grow: 1;
+  margin: 0 20px;
+  min-width: 0;
+  min-height: auto;
+  height: auto;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0);
+}
+
+
+@media (max-width: 600px) {
+
+  .wrapper {
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+    grid-template-rows: 80px 1fr 1fr 100px;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+  nav .toggle {
+    display: none;
+  }
+
+  nav ul {
+    position: relative;
+    max-height: none;
+    float: right;
+    background: none;
+    top: auto;
+    width: auto;
+  }
+
+  nav ul li {
+    display: inline-block;
+    text-align: center;
+    border: 0;
+  }
+
+  nav ul li a {
+    padding: 0 10px;
+    line-height: 80px;
+    height: 80px;
+  }
+
+  nav ul li a:hover {
+    color: #FEEFDD;
+  }
+
+
+}
