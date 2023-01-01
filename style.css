@@ -39,8 +39,8 @@ img {
     "header header header header"
     "main main main aside"
     "footer footer footer footer";
-  grid-template-rows: 95px 1fr 200px;
-  grid-template-columns: repeat( 3, 1fr ) 240px;
+  grid-template-rows: 80px 1fr 200px;
+  grid-template-columns: repeat( 3, 1fr ) 500px;
   grid-gap: 1em;
 }
 
